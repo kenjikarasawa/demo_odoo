@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="private_collection_list">
+            <field name="name">private_collection list</field>
+            <field name="model">private_collection.collect</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="image"/>
+                </tree>
+            </field>
+
+        </record>
+        <record model="ir.ui.view" id="private_collection_form">
+            <field name="name">private_collection form</field>
+            <field name="model">private_collection.collect</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="release_date"/>
+                                <field name="company"/>
+                                <field name="condition"/>
+                            </group>
+                            <group>
+                                <field name="image" widget="image"/>
+                            </group>
+                                <notebook>
+                                    <page string="history">
+                                        <field name="next_history_ids">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="check_date"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        -->
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="private_collection.action_window">
+            <field name="name">private_collection window</field>
+            <field name="res_model">private_collection.collect</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="kki_forklift.action_server">
+              <field name="name">kki_forklift server</field>
+              <field name="model_id" ref="model_kki_forklift_kki_forklift"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="private_collection" id="private_collection.menu_root"
+                  web_icon="private_collection,static/description/game.png"/>
+        -->
+        <!-- menu categories -->
+
+        <menuitem name="collect" id="private_collection.collect" parent="private_collection.menu_root"/>
+
+        <!--
+            <menuitem name="Menu 2" id="kki_forklift.menu_2" parent="kki_forklift.menu_root"/>
+        -->
+        <!-- actions -->
+
+        <menuitem name="collect" id="private_collection.collect_list" parent="private_collection.collect"
+                  action="private_collection.action_window"/>
+        <!--
+            <menuitem name="Server to list" id="kki_forklift" parent="kki_forklift.menu_2"
+                      action="kki_forklift.action_server"/>
+        -->
+    </data>
+</odoo>
