@@ -27,7 +27,7 @@
         'views/forklift.xml',
         'views/size.xml',
         'views/check_history.xml',
-        'views/templates.xml',
+        'views/kki_product.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

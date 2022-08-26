@@ -26,7 +26,7 @@
         'security/ir.model.access.csv',
         'views/collection.xml',
         'views/history.xml',
-        # 'views/templates.xml',
+        # 'views/kki_product.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
